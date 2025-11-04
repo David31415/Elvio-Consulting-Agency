@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Elvio Consulting Agency</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724; /* slate-900 */
+      --card:#0b1220;
+      --accent:#5eead4; /* teal-300 */
+      --muted:#94a3b8;
+      --glass: rgba(255,255,255,0.04);
+      --max-width:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;padding:0;
+      font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(94,234,212,0.04), transparent),
+                  radial-gradient(800px 400px at 90% 90%, rgba(99,102,241,0.03), transparent),
+                  var(--bg);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+
+    .container{max-width:var(--max-width);margin:0 auto;padding:36px 20px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+    .logo svg{width:44px;height:44px}
+    nav{display:flex;gap:18px;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600}
+    nav a:hover{color:var(--accent)}
+
+    .hero{
+      display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:28px;
+    }
+    .hero-left h1{font-size:40px;margin:0 0 12px 0;letter-spacing:-0.02em}
+    .hero-left p{margin:0 0 20px;color:var(--muted)}
+    .cta{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:10px;background:linear-gradient(90deg, rgba(94,234,212,0.08), rgba(99,102,241,0.06));border:1px solid rgba(255,255,255,0.04);cursor:pointer}
+    .cta strong{color:var(--accent)}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:14px;padding:18px;box-shadow:0 6px 30px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
+
+    /* Graphic */
+    .graphic{width:100%;height:360px;display:flex;align-items:center;justify-content:center}
+    .orb{width:260px;height:260px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(from 120deg at 50% 50%, rgba(94,234,212,0.14), rgba(99,102,241,0.12));box-shadow:0 12px 40px rgba(2,6,23,0.6);position:relative;overflow:hidden}
+    .orb::after{content:"";position:absolute;inset:0;border-radius:50%;box-shadow:inset 0 1px 40px rgba(255,255,255,0.02)}
+    .orb svg{width:85%;height:85%;animation:float 6s ease-in-out infinite}
+    @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-10px) rotate(8deg)}100%{transform:translateY(0)}}
+
+    /* services */
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
+    .service h3{margin:8px 0 6px 0}
+    .service p{margin:0;color:var(--muted);font-size:14px}
+
+    /* about */
+    .about{display:flex;gap:20px;align-items:center;margin-top:38px}
+    .about .text{flex:1}
+
+    footer{margin-top:48px;padding:28px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,0.02)}
+
+    /* responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .graphic{order: -1;margin-bottom:12px}
+      .services{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:600px){
+      .services{grid-template-columns:1fr}
+      header{flex-direction:column;align-items:flex-start}
+      nav{width:100%;overflow:auto}
+    }
+
+    /* small badges */
+    .badge{font-size:12px;padding:6px 8px;border-radius:999px;background:var(--glass);border:1px solid rgba(255,255,255,0.03);color:var(--muted)}
+
+    .contact-form input,.contact-form textarea{width:100%;padding:10px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:inherit;margin-bottom:10px}
+    .contact-form button{padding:10px 14px;border-radius:10px;border:0;background:linear-gradient(90deg,var(--accent),#6366f1);color:#06202a;font-weight:700;cursor:pointer}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a class="logo" href="#">
+        <!-- SVG monogram -->
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+          <defs>
+            <linearGradient id="g1" x1="0" x2="1">
+              <stop offset="0" stop-color="#5eead4" />
+              <stop offset="1" stop-color="#6366f1" />
+            </linearGradient>
+          </defs>
+          <circle cx="50" cy="50" r="46" fill="url(#g1)" opacity="0.12" />
+          <path d="M28 72 L28 32 L52 32 C64 32 72 40 72 52 C72 64 64 72 52 72 Z" fill="url(#g1)"/>
+          <text x="50" y="56" text-anchor="middle" font-weight="700" font-size="22" fill="#041018">E</text>
+        </svg>
+        <div>
+          <div style="font-weight:800;font-size:18px;line-height:1">Elvio Consulting</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:3px">Strategy • Product • Growth</div>
+        </div>
+      </a>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a class="badge" href="#">Get a Proposal</a>
+      </nav>
+    </header>
+
+    <main class="hero">
+      <div class="hero-left">
+        <div class="card" style="padding:28px">
+          <p class="badge">Trusted by startups & enterprise</p>
+          <h1>We build repeatable growth for digital products</h1>
+          <p>Elvio Consulting partners with product teams to design faster experiments, ship better features, and scale predictable revenue — without bloated budgets.</p>
+          <div style="display:flex;gap:12px;margin-top:18px">
+            <a class="cta" href="#contact"><strong>Start a project</strong> — 3-step discovery</a>
+            <a class="cta" href="#services" style="background:transparent;border:1px solid rgba(255,255,255,0.04)"><strong>Our services</strong></a>
+          </div>
+          <div style="display:flex;gap:12px;margin-top:18px;color:var(--muted);font-size:13px">
+            <div>💡 Product strategy</div>
+            <div>⚙️ Technical architecture</div>
+            <div>📈 Growth & analytics</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card graphic">
+        <div class="orb" role="img" aria-label="abstract growth graphic">
+          <!-- animated SVG diagram that implies growth & layers -->
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <g transform="translate(100,100)">
+              <g id="rings" style="transform-origin:100px 100px">
+                <circle r="68" stroke="rgba(255,255,255,0.06)" stroke-width="1" fill="none" />
+                <circle r="46" stroke="rgba(94,234,212,0.18)" stroke-width="3" fill="none">
+                  <animate attributeName="r" values="40;48;40" dur="6s" repeatCount="indefinite"/>
+                </circle>
+                <circle r="20" stroke="rgba(99,102,241,0.18)" stroke-width="3" fill="none">
+                  <animate attributeName="r" values="16;22;16" dur="5s" repeatCount="indefinite"/>
+                </circle>
+              </g>
+              <g id="nodes">
+                <circle cx="-50" cy="-20" r="6" fill="#5eead4">
+                  <animate attributeName="cy" values="-20;-28;-20" dur="3s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="60" cy="10" r="5" fill="#6366f1">
+                  <animate attributeName="cx" values="60;66;60" dur="3.4s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="10" cy="60" r="4" fill="#ffffff" opacity="0.9">
+                  <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0" to="360" dur="8s" repeatCount="indefinite"/>
+                </circle>
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </main>
+
+    <section id="services" class="services">
+      <div class="service card">
+        <svg width="36" height="36" viewBox="0 0 24 24" aria-hidden style="opacity:0.9"><path d="M3 13h2v-2H3v2zm4 0h14v-2H7v2zM3 7h18V5H3v2zM3 19h14v-2H3v2z" fill="currentColor"/></svg>
+        <h3>Business Strategy</h3>
+        <p>Market analysis, roadmapping, and KPI design to align product and commercial teams.</p>
+      </div>
+
+      <div class="service card">
+        <svg width="36" height="36" viewBox="0 0 24 24" aria-hidden style="opacity:0.9"><path d="M12 2L2 7l10 5 10-5-10-5zm0 7L2 7v6l10 5 10-5V7l-10 4z" fill="currentColor"/></svg>
+        <h3>Product Design & UX</h3>
+        <p>Prototyping, usability testing and design systems that reduce development cycles.</p>
+      </div>
+
+      <div class="service card">
+        <svg width="36" height="36" viewBox="0 0 24 24" aria-hidden style="opacity:0.9"><path d="M3 13h2v-2H3v2zm4 0h14v-2H7v2zM3 7h18V5H3v2zM3 19h14v-2H3v2z" fill="currentColor"/></svg>
+        <h3>Growth & Analytics</h3>
+        <p>Experiment frameworks, analytics instrumentation and ML-backed personalization.</p>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="card text">
+        <h2>About Elvio</h2>
+        <p style="color:var(--muted)">Elvio Consulting brings a cross-disciplinary team of product managers, engineers and growth analysts who have shipped features used by millions. We focus on measurable outcomes — reducing churn, increasing ARPU, and building playbooks your team can repeat.</p>
+        <ul style="color:var(--muted);margin-top:10px">
+          <li>Short sprint engagements (4–8 weeks)</li>
+          <li>Custom tooling & dashboards</li>
+          <li>Knowledge transfer & team training</li>
+        </ul>
+      </div>
+      <div class="card" style="min-width:320px">
+        <h3>Approach</h3>
+        <p style="color:var(--muted)">Discovery → Hypothesis → Build → Measure → Scale. We de-risk product bets with quick experiments and clear metrics.</p>
+        <div style="display:flex;gap:12px;margin-top:12px">
+          <div style="flex:1">
+            <strong>20+</strong>
+            <div style="color:var(--muted);font-size:13px">Companies helped</div>
+          </div>
+          <div style="flex:1">
+            <strong>120+</strong>
+            <div style="color:var(--muted);font-size:13px">Experiments run</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:30px">
+      <div class="card contact-form">
+        <h2>Let's talk</h2>
+        <p style="color:var(--muted)">Send a short note and we'll reply within 2 business days.</p>
+        <!-- Note: form is static — replace action with your backend endpoint -->
+        <form onsubmit="handleSubmit(event)">
+          <input type="text" name="name" placeholder="Your name" required />
+          <input type="email" name="email" placeholder="Your email" required />
+          <input type="text" name="company" placeholder="Company (optional)" />
+          <textarea name="message" placeholder="How can we help?" rows="4" required></textarea>
+          <div style="display:flex;gap:10px;align-items:center">
+            <button type="submit">Request proposal</button>
+            <a href="mailto:hello@elvioconsulting.com" style="color:var(--muted);text-decoration:none">Or email us</a>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+        <div>
+          <div style="font-weight:700">Elvio Consulting</div>
+          <div style="font-size:13px;color:var(--muted)">© Elvio Consulting • All rights reserved</div>
+        </div>
+        <div style="text-align:right">
+          <div style="color:var(--muted);font-size:13px">Follow us</div>
+          <div style="display:flex;gap:8px;margin-top:8px;color:var(--muted)">LinkedIn · Twitter · GitHub</div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    function handleSubmit(e){
+      e.preventDefault();
+      const f = e.target;
+      const name = f.name.value.trim();
+      const email = f.email.value.trim();
+      const message = f.message.value.trim();
+      if(!name||!email||!message){alert('Please fill required fields');return}
+      // For this static template we simply open the user's mail client as a quick fallback
+      const subject = encodeURIComponent('Elvio Consulting inquiry from ' + name);
+      const body = encodeURIComponent('Name: '+name+'\nEmail: '+email+'\nCompany: '+(f.company.value||'')+'\n\n'+message);
+      window.location.href = `mailto:hello@elvioconsulting.com?subject=${subject}&body=${body}`;
+    }
+  </script>
+</body>
+</html>
